@@ -1,0 +1,11 @@
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\bin\Debug\netcoreapp2.0\crypto_analyse_newsletter.deps.json
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\bin\Debug\netcoreapp2.0\crypto_analyse_newsletter.runtimeconfig.json
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\bin\Debug\netcoreapp2.0\crypto_analyse_newsletter.runtimeconfig.dev.json
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\bin\Debug\netcoreapp2.0\crypto_analyse_newsletter.dll
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\bin\Debug\netcoreapp2.0\crypto_analyse_newsletter.pdb
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\obj\Debug\netcoreapp2.0\crypto_analyse_newsletter.csprojResolveAssemblyReference.cache
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\obj\Debug\netcoreapp2.0\crypto_analyse_newsletter.csproj.CoreCompileInputs.cache
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\obj\Debug\netcoreapp2.0\crypto_analyse_newsletter.AssemblyInfoInputs.cache
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\obj\Debug\netcoreapp2.0\crypto_analyse_newsletter.AssemblyInfo.cs
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\obj\Debug\netcoreapp2.0\crypto_analyse_newsletter.dll
+c:\users\user\source\repos\crypto_analyse_newsletter\crypto_analyse_newsletter\obj\Debug\netcoreapp2.0\crypto_analyse_newsletter.pdb
