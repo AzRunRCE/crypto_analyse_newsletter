@@ -11,6 +11,7 @@ namespace crypto_analyse_newsletter
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Crypto-Analyse Push service starting..");
             FeedParser feedParser = new FeedParser();
             while (true)
             {
@@ -44,9 +45,9 @@ namespace crypto_analyse_newsletter
                     Console.WriteLine("Scanned at " + DateTime.Now.ToString());
                     System.Threading.Thread.Sleep(300000);
                 }
-                catch
+                catch(Exception ex)
                 {
-
+                    Console.WriteLine(ex.Message);
                 }
                 
             }
