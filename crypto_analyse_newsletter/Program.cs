@@ -54,6 +54,7 @@ namespace crypto_analyse_newsletter
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 System.IO.File.AppendAllText("log.txt", ex.Message);
             }
         }
