@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace crypto_analyse_newsletter
@@ -63,7 +66,14 @@ namespace crypto_analyse_newsletter
         {
             try
             {
-                XDocument doc = XDocument.Load(url);
+                WebProxy wp = new WebProxy("37.59.47.13:3128");
+            
+                WebClient wc = new WebClient();
+                wc.Proxy = wp;
+
+                MemoryStream ms = new MemoryStream(wc.DownloadData(url));
+                XmlTextReader rdr = new XmlTextReader(ms);
+                XDocument doc = XDocument.Load(rdr);
                 // RSS/Channel/item
                 var entries = from item in doc.Root.Descendants().First(i => i.Name.LocalName == "channel").Elements().Where(i => i.Name.LocalName == "item")
                               select new Item
