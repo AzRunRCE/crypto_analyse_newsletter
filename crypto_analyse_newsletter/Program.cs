@@ -27,15 +27,21 @@ namespace crypto_analyse_newsletter
                             HtmlAgilityPack.HtmlDocument htmlDocument = new HtmlAgilityPack.HtmlDocument();
                             htmlDocument.LoadHtml(htmlString);
                             var text = htmlDocument.DocumentNode.SelectSingleNode("//*[@id='off-canvas-body']/div[4]/div/div/div/div[1]/div/article").InnerHtml;
-                            var msg = new MailMessage("crypto-analyse@crypto.com", "quentin.martinez@outlook.com", itm.Title, text);
+                            var msg = new MailMessage("quentin.martinez@outlook.com", "azrunsoft@gmail.com", itm.Title, text);
                             msg.To.Add("quentin.martinez@outlook.com");
                             msg.To.Add("bc@chunkz.net");
                             msg.IsBodyHtml = true;
-                            var smtpClient = new SmtpClient("smtp.free.fr", 25); //if your from email address is "from@hotmail.com" then host should be "smtp.hotmail.com"**
-                            smtpClient.UseDefaultCredentials = true;
-                            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                            smtpClient.EnableSsl = true;
-                            smtpClient.Send(msg);
+                            var login = GetLogin();
+                            var smtp = new SmtpClient
+                            {
+                                Host = "smtp.gmail.com",
+                                Port = 587,
+                                EnableSsl = true,
+                                DeliveryMethod = SmtpDeliveryMethod.Network,
+                                UseDefaultCredentials = false,
+                                Credentials = new NetworkCredential(login.Split(':')[0], login.Split(':')[1])
+                            };
+                            smtp.Send(msg);
                             Console.WriteLine(itm.Title + " Email Sended Successfully");
                         }
 
@@ -75,6 +81,14 @@ namespace crypto_analyse_newsletter
                 return "";
             }
             return System.IO.File.ReadAllText("db.txt"); 
+        }
+        static string GetLogin()
+        {
+            if (!System.IO.File.Exists("db.txt"))
+            {
+                return "";
+            }
+            return System.IO.File.ReadAllText("login.txt");
         }
     }
 }
