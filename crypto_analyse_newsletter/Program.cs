@@ -62,7 +62,7 @@ namespace crypto_analyse_newsletter
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(login.Split(':')[0], login.Split(':')[1])
             };
-           // smtp.Send(msg);
+            smtp.Send(msg);
             return true;
         }
         static bool AddArticle(string hash)
