@@ -13,8 +13,6 @@ namespace crypto_analyse_newsletter
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime PublishDate { get; set; }
-        public FeedType FeedType { get; set; }
-
         public string Guid { get; set; }
 
         public Item()
@@ -23,7 +21,7 @@ namespace crypto_analyse_newsletter
             Title = "";
             Content = "";
             PublishDate = DateTime.Today;
-            FeedType = FeedType.RSS;
+            
         }
     }
 }
