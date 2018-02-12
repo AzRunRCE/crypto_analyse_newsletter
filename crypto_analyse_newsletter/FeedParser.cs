@@ -41,8 +41,9 @@ namespace crypto_analyse_newsletter
                 
                 return entries.ToList();
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return new List<Item>();
             }
         }

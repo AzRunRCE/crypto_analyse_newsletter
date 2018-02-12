@@ -9,7 +9,7 @@ namespace crypto_analyse_newsletter
 {
     class Program
     {
-        static string proxyServer = "37.59.47.13:3128";
+        static string proxyServer = "137.74.168.174:8080";
         static void Main(string[] args)
         {
             Console.WriteLine("Crypto-Analyse newsletter service starting..");
