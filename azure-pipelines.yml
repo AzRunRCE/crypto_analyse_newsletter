@@ -1,26 +1,18 @@
 resources:
   containers:
+  - container: my_container
+    image: lukaslansky/visualstudio-netwebworkload
   - container: mssql
-    image: microsoft/mssql-server-windows-express
+    image: microsoft/mssql-server-linux
     env: {ACCEPT_EULA: Y, SA_PASSWORD: GLOBAL_PASSWORD}
  
-trigger:
-- master
-
 pool:
-  vmImage: 'vs2017-win2016'
-  
+  vmImage: 'ubuntu-16.04'
+ 
+container: my_container
+ 
 services:
   mssql: mssql
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '$(solution)'
-    feedsToUse: 'select'
-    versioningScheme: 'off'
+- bash: echo ok
